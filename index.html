@@ -242,7 +242,8 @@ Through extensive experiments, we qualitatively and quantitatively evaluated the
     <p>
       Personalizing the restoration process enables high-fidelity restoration, 
       while retaining accurate subject identity. We compare with a unconditional, non-personalized restoration method (DiffBIR). 
-      While the comparison method is able to restore the test images, significant identity drifts may be noted.
+      While the comparison method is able to restore the test images, significant identity drifts may be noted. Please move around the 
+      slider for better visualization.
     </p>
     
     <p>
@@ -418,24 +419,23 @@ Through extensive experiments, we qualitatively and quantitatively evaluated the
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Understanding Personalization Strategies</h2>
+    <h2 class="title is-3">Proposed Method</h2>
     <img src="./static/images/scheme.png"
        class="interpolation-image"
        alt="Interpolate start reference image."/>
-    <p>
-      We compare our proposed personalization strategy of contextual personalization (inage on right in slider panels) 
-      with alternative methods. Given a degraded face image as input, whose identity appears in the reference 
-      image, existing unpersonalized diffusion-based face image restoration (DiffBIR) is unable to retain identity. Personalization 
-      of the text-to-image prior independently (non-contextual personalization) is insufficent as the face restoration 
-      model is unable to leverage the identity information. On the other hand, unconditionally personalizing the restoration 
-      model leads to some injection of identity cues (see tattoo), however accompanied by a loss of high-frequency detail 
-      (see beard) due to the degradation of the general prior. Our method is able to significantly inject identity information 
-      into the restoration process, without losing the general image prior.
-    </p>
     
+    <p>
+      Our approach aims to personalize a blind face restoration system (left) and consists of two main steps: 
+      (1) fine-tuning the generative prior <strong>G</strong> within the context of the system to leverage conditioning 
+      cues from <strong>E</strong>, and (2) adjusting <strong>E</strong> in order to preserve its capability to be agnostic 
+      to fine-grained identity features across different subjects while guiding the network. Then, at inference 
+      time (3), our system embeds the personalized prior and can generate output images with high fidelity to the 
+      individual appearing in the reference images.
+    </p>
     <p>
       <br />
     </p>
+    <h2 class="title is-3">Understanding Personalization Strategies</h2>
         <div class="columns is-centered">
 
           <div class="column">
@@ -503,6 +503,17 @@ Through extensive experiments, we qualitatively and quantitatively evaluated the
           </div>
 
         </div>
+
+        <p>
+          We compare our proposed personalization strategy of contextual personalization (inage on right in slider panels) 
+          with alternative methods. Given a degraded face image as input, whose identity appears in the reference 
+          image, existing unpersonalized diffusion-based face image restoration (DiffBIR) is unable to retain identity. Personalization 
+          of the text-to-image prior independently (non-contextual personalization) is insufficent as the face restoration 
+          model is unable to leverage the identity information. On the other hand, unconditionally personalizing the generative prior
+           leads to some injection of identity cues (see tattoo), however accompanied by a loss of high-frequency detail 
+          (see beard) due to the degradation of the general prior. Our method is able to significantly inject identity information 
+          into the restoration process, without losing the general image prior.
+        </p>
 
 
 
