@@ -188,7 +188,7 @@
        class="interpolation-image"
        alt="Interpolate start reference image."/>
       <h2 class="subtitle has-text-centered">
-        Through contextual personalization, unconditional diffusion models can be personalized in a prinicipled manner, improving identity retention as well as image quality.
+        TL;DR  With a few reference images of an individual, we personalize a diffusion prior within the context of a blind image restoration framework, resulting in a natural image that maintains high fidelity to the individual's identity and the attributes of the degraded image.
       </h2>
     </div>
   </div>
@@ -252,7 +252,10 @@ Through extensive experiments, we qualitatively and quantitatively evaluated the
 
           <div class="column">
             <div>
-              <p style="text-align: center;">An input degraded image, that we wish to restore.</p>
+              <p style="text-align: center;">input image (degraded). </p>
+              <p>
+                <br />
+              </p>
 
               <img src="./static/images/big_results/C_10_4_og.png"
                 class="interpolation-image"
@@ -416,6 +419,9 @@ Through extensive experiments, we qualitatively and quantitatively evaluated the
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Understanding Personalization Strategies</h2>
+    <img src="./static/images/scheme.png"
+       class="interpolation-image"
+       alt="Interpolate start reference image."/>
     <p>
       We compare our proposed personalization strategy of contextual personalization (inage on right in slider panels) 
       with alternative methods. Given a degraded face image as input, whose identity appears in the reference 
@@ -434,7 +440,7 @@ Through extensive experiments, we qualitatively and quantitatively evaluated the
 
           <div class="column">
             <div>
-              <p style="text-align: center;">Input degraded image.</p>
+              <p style="text-align: center;">input image (degraded).</p>
 
               <img src="./static/images/pers_compare/T_3_6.png"
                 class="interpolation-image"
@@ -517,7 +523,7 @@ Through extensive experiments, we qualitatively and quantitatively evaluated the
           <h2 class="title is-3">Text-Guided Editing</h2>
           <p>
             Our use of text anchoring (as opposed to prior unconditional models) enables 
-            text-guided editing. Using prompts modifiers such as "smiling" and "frowning" enables 
+            text-guided editing. Using prompts modifiers such as "smiling" and "blue eyes" enables 
             relevant editing along with the restoration.
           </p>
           <img src="./static/images/pers_text_editing.png"
