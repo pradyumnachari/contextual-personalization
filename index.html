@@ -291,6 +291,44 @@ Through extensive experiments, we qualitatively and quantitatively evaluated the
         </div>
 
 
+        <div class="columns is-centered">
+
+          <div class="column">
+            <div>
+              <!-- <p style="text-align: center;">An input degraded image, that we wish to restore.</p> -->
+
+              <img src="./static/images/big_results/images-3_deg.png"
+                class="interpolation-image"
+                alt="Interpolate start reference image."/>
+            </div>
+            </div>
+
+          <div class="column">
+            <div>
+              <!-- <p style="text-align: center;">Restored Image: unconditional (left), ours (right).</p> -->
+              <img-comparison-slider>
+                <figure slot="first" class="before">
+                  <img width="100%" src="./static/images/big_results/images-3_diffbir.png">
+                  <!-- <figcaption>Unconditional</figcaption> -->
+                </figure>
+                <figure slot="second" class="after">
+                  <img width="100%" src="./static/images/big_results/images-3_ours.png">
+                  <!-- <figcaption>Personalized (Ours)</figcaption> -->
+              </img-comparison-slider>
+            </div>
+          </div>
+
+          <div class="column">
+              <div>
+                <!-- <p style="text-align: center;">Identity reference for the restored image.</p> -->
+                <img src="./static/images/big_results/images-3_ref.png"
+                  class="interpolation-image"
+                  alt="Interpolate start reference image."/>
+              </div>
+          </div>
+
+        </div>
+
 
         <div class="columns is-centered">
 
